@@ -1,6 +1,8 @@
 var thePull = [];
 var thePush = [];
 
+// pull the menu in
+
 $(document).ready(function(){
    var menuOnThePage = $("#eatThisMenu")
    var getMenu = $.ajax( {
@@ -16,6 +18,8 @@ $(document).ready(function(){
    });
 });
 
+// add things to the order
+
 var subtotal = 0;
 var orderTaxxx = 0;
 $("#addToOrder").click(function(){
@@ -25,18 +29,36 @@ $("#addToOrder").click(function(){
    for (var i = 0; i < amount; i++) {
       orderTable.append("<tr><td>"+thePull[itemToAdd]['name']+"</td><td>"+thePull[itemToAdd]['price']+"</td></tr>");
       thePush.push(thePull[itemToAdd]);
-      console.log(subtotal);
-      console.log(thePull[itemToAdd]['price']);
       subtotal += (thePull[itemToAdd]['price'])*1;
-      orderTaxxx += ((thePull[itemToAdd]['price'])*.07)*1;
+      orderTaxxx += ((thePull[itemToAdd]['price'])*.083)*1;
    }
    var grandddTotal = (subtotal*1) + (orderTaxxx*1);
-   $("#orderSubtotal").html(subtotal);
+   $("#orderSubtotal").html(subtotal.toFixed(2));
    $("#orderTax").html(orderTaxxx.toFixed(2));
    $("#orderGrandTotal").html(grandddTotal.toFixed(2));
-   console.log(thePush);
-   console.log(subtotal);
-   console.log(orderTaxxx);
-   console.log(grandddTotal);
    $("#theDeets").animate({"opacity":1.0},500,function(){console.log()});
 });
+
+// get user info and post
+$("#deliverIt").click(function(){
+   var userName = $("input[name=name]").val();
+   var userPhone = $("input[name=phone]").val();
+   var userAddy = $("input[name=address]").val();
+   var theOrder = {
+      "customerInfo":[userName,userPhone,userAddy],
+      "orderItems":thePush
+   };
+   console.log(theOrder);
+
+   var placeOrder = $.ajax( {
+         url:"https://galvanize-eats-api.herokuapp.com/orders",
+         method:"POST",
+         data: theOrder,
+         success: function(data){
+            console.log(data);
+            console.log("HUZZAH");
+         }
+      })
+});
+
+// add post
