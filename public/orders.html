@@ -9,19 +9,25 @@
       <header id="topHeader">
          Galvanize Eats
       </header>
-      <main>
+      <main style="background-color:orange;">
          <div id="theMenu">
             <form id="menuForm">
                <select id="eatThisMenu" name="menu" multiple>
 
                </select>
+               <br>
+               <label for="qty">Quantity</label><input type="number" value="1">
+               <br>
+               <button type="button" name="addToOrder">Add Item</button><br><br>
+               <label for="name">Name</label><input type="text" name="name"><br>
+               <label for="phone">Phone Number</label><input type="text" name="phone"><br>
+               <label for="phone">Address</label><input type="text" name="address"><br>
+               <button type="button" name="deliverIt">Deliver It!</button>
             </form>
-         </div>
          <div id="yerOrder">
-            <form id="orderForm">
 
-            </form>
          </div>
+      </div>
       </main>
       <footer>&#169; Galvanize, 2015 <img src="media/fleur.png" width="15px"> Denver, Colorado</footer>
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>

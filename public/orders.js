@@ -9,7 +9,7 @@ $(document).ready(function(){
       console.log(data.menu[0]["name"]);
       console.log(data.menu.length);
       for (var i = 0; i < data.menu.length; i++) {
-         menuOnThePage.append("<option id='menuItem"+[i]+"'>"+data.menu[i]['name']+"</option>")
+         menuOnThePage.append("<option id='menuItem"+[i]+"'>"+data.menu[i]['name']+" "+data.menu[i]['price']+"</option>")
       }
 
       }
