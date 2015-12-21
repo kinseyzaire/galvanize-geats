@@ -1,0 +1,9 @@
+{
+  "firebase": "galvanize-eats-kinsey",
+  "public": "public",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
