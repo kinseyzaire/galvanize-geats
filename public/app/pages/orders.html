@@ -16,7 +16,7 @@
 
                </select>
                <br>
-               <label for="qty">Quantity</label><input type="number" id="qty" value="1">
+               <label for="qty">Quantity</label><input type="number" id="qty" value="1" min="1" max="99">
                <br>
                <button type="button" id="addToOrder">Add Item</button><br><br>
                <label for="name">Name</label><input type="text" name="name"><br>
@@ -28,6 +28,13 @@
             <table id="putAllTheOrderHere">
 
             </table>
+            <div id="theDeets">
+               <p>
+                  Subtotal<span id="orderSubtotal"></span><br>
+                  Tax <span id="orderTax"></span><br>
+                  Grand Total<span id="orderGrandTotal"></span><br>
+               </p>
+            </div>
          </div>
       </div>
       </main>

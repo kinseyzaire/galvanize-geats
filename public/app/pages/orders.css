@@ -72,3 +72,7 @@ footer {
 #theMenu {
    width: 100%;
 }
+
+#theDeets {
+   opacity: 0.0;
+}
