@@ -7,11 +7,14 @@ body {
    margin: 0;
    box-sizing: border-box;
    overflow: auto;
+   font-family: sans-serif;
 }
 
 main {
-   height: 500px;
+   height: 300px;
    padding: 35px 20%;
+   color: white;
+   text-align: center;
 }
 
 footer {
