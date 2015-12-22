@@ -49,6 +49,7 @@ footer {
    height: 250px;
    font-size: 20px;
    padding: 20px;
+   overflow: scroll;
 }
 
 #menuForm {
@@ -63,4 +64,22 @@ footer {
 #theDeets {
    opacity: 0.0;
    font-size: 14px;
+}
+
+#addToOrder {
+   background-color: #5973a6;
+   color: white;
+}
+
+#deliverIt {
+   background-color: #59a673;
+   color: white;
+}
+
+#addToOrder:hover {
+   background-color: #6a81af;
+}
+
+#deliverIt:hover {
+   background-color: #6aaf81;
 }
