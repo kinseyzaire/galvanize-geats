@@ -25,6 +25,10 @@ footer {
    width: 100%;
 }
 
+label {
+   font-size: 10px;
+}
+
 .topHeader {
    background-color: rgba( 0, 0, 0, 0.5);
    color: white;
@@ -36,7 +40,7 @@ footer {
    float: left;
    background-color: white;
    width: 39%;
-   min-height: 400px;
+   min-height: 480px;
    border: 1px solid grey;
    display: inline-block;
    padding: 20px;
