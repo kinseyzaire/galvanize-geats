@@ -4,7 +4,7 @@ body {
    margin: 0;
    box-sizing: border-box;
    overflow: auto;
-   font-family: sans-serif;
+   font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -63,4 +63,8 @@ a {
    border-radius: 2px;
    padding: 10px;
    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+#mainButton:hover {
+   background-color: #6aaf81;
 }

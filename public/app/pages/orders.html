@@ -3,6 +3,7 @@
    <head>
       <meta charset="utf-8">
       <title>Order Online</title>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800' rel='stylesheet' type='text/css'>
       <link href="orders.css" rel="stylesheet" type="text/css">
    </head>
    <body>
@@ -13,8 +14,8 @@
          <div id="theMenu">
             <form id="menuForm">
                <select id="eatThisMenu" name="menu" multiple>
-                  <option id="bburgers" value="Burgers" disabled="disabled"><strong>Burgers</strong></option>
-                  <option id="pizzas" value="Pizzas" disabled="disabled"><strong>Pizzas</strong></option>
+                  <option id="bburgers" class="bbbold" value="Burgers" disabled="disabled">Burgers</option>
+                  <option id="pizzas" class="bbbold" value="Pizzas" disabled="disabled">Pizzas</option>
                </select>
                <br><br>
                <label for="qty">Quantity </label><br><input type="number" id="qty" value="1" min="1" max="99" style="width:30px;height:20px;">
@@ -22,7 +23,7 @@
                <label for="name">Name </label><br><input type="text" name="name" style="width:350px;height:20px;"><br>
                <label for="phone">Phone Number </label><br><input type="text" name="phone" style="width:350px;height:20px;"><br>
                <label for="phone">Address </label><br><input type="text" name="address" style="width:350px;height:20px;"><br><br>
-               <button type="button" id="deliverIt" style="width:356px;height:40px;">Deliver It!</button>
+               <button type="button" id="deliverIt" style="width:356px;height:90px;">Deliver It!</button>
             </form>
          <div id="yerOrder">
             <table id="putAllTheOrderHere">
@@ -45,7 +46,7 @@
                      $<span id="orderTax"></span>
                   </td>
                </tr>
-               <tr>
+               <tr class="bbbold">
                   <td>
                      Grand Total
                   </td>
@@ -53,10 +54,6 @@
                      $<span id="orderGrandTotal"></span>
                   </td>
                </tr>
-                  <!-- Subtotal $<span id="orderSubtotal"></span><br> -->
-                  <!-- Tax $<span id="orderTax"></span><br>
-                  Grand Total $<span id="orderGrandTotal"></span><br> -->
-
             </table>
          </div>
       </div>

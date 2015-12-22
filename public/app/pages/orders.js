@@ -1,42 +1,43 @@
 var thePull = [];
 var thePush = [];
+var menuOnThePage = $("#eatThisMenu")
+var demBurgers = $("#bburgers")
+var daaPizzas = $("#pizzas")
 
 // pull the menu in
 
 $(document).ready(function(){
-   var menuOnThePage = $("#eatThisMenu")
-   var demBurgers = $("#bburgers")
-   var daaPizzas = $("#pizzas")
    var getMenu = $.ajax( {
       url:"https://galvanize-eats-api.herokuapp.com/menu",
       method:"GET",
       dataType: "json",
       success: function(data) {
          thePull = data.menu;
-         for (var i = 0; i < data.menu.length; i++) {
-            var whatIsIt = data.menu[i]['name'];
-            whatIsIt = whatIsIt.charAt(whatIsIt.length-1);
-            console.log(whatIsIt);
-               if (whatIsIt.charAt(whatIsIt.length-1) === "r") {
-                  console.log("burger");
-                  menuOnThePage.append("<option id='menuItem"+[i]+"' value='"+[i]+"'>"+data.menu[i]['name']+" "+data.menu[i]['price']+"</option>")
-               } else {
-               console.log("pizza");
-               menuOnThePage.append("<option id='menuItem"+[i]+"' value='"+[i]+"'>"+data.menu[i]['name']+" "+data.menu[i]['price']+"</option>")
-               }
-
-            // menuOnThePage.append("<option id='menuItem"+[i]+"' value='"+[i]+"'>"+data.menu[i]['name']+" "+data.menu[i]['price']+"</option>")
-         }
+         addItemsToMenu();
       }
    });
 });
+
+// add menu to page
+var addItemsToMenu = function() {
+   for (var i = 0; i < thePull.length; i++) {
+      var whatIsIt = thePull[i]['name'];
+      whatIsIt = whatIsIt.charAt(whatIsIt.length-1);
+      console.log(whatIsIt);
+      if (whatIsIt.charAt(whatIsIt.length-1) === "r") {
+         $("#bburgers").after("<option id='menuItem"+[i]+"' value='"+[i]+"'>"+thePull[i]['name']+" "+thePull[i]['price']+"</option>")
+      } else {
+         $("#pizzas").after("<option id='menuItem"+[i]+"' value='"+[i]+"'>"+thePull[i]['name']+" "+thePull[i]['price']+"</option>")
+      }
+   }
+};
+
 
 // add things to the order
 
 var subtotal = 0;
 var orderTaxxx = 0;
 $("#addToOrder").click(function(){
-   console.log(thePull);
    var itemToAdd = $("#eatThisMenu").val()
    var amount = $("#qty").val()
    var orderTable = $("#putAllTheOrderHere")

@@ -6,8 +6,8 @@ body {
    box-sizing: border-box;
    overflow: auto;
    margin: 0;
-   background: url(../../media/gradient.png);
-   font-family: sans-serif;
+   background-image: linear-gradient( #d6972c, #a25f10 );
+   font-family: 'Open Sans', sans-serif;
 }
 
 main {
@@ -20,8 +20,6 @@ footer {
    color: white;
    text-align: center;
    padding: 15px;
-   position: absolute;
-   bottom: 0;
    width: 100%;
 }
 
@@ -36,11 +34,17 @@ label {
    padding: 20px;
 }
 
+.bbbold {
+   font-size: 18px;
+   font-weight: 800;
+   color: black;
+}
+
 #yerOrder {
    float: left;
    background-color: white;
    width: 39%;
-   min-height: 480px;
+   min-height: 508px;
    border: 1px solid grey;
    display: inline-block;
    padding: 20px;
@@ -48,9 +52,13 @@ label {
 
 }
 
+#putAllTheOrderHere {
+   width: 100%;
+}
+
 #eatThisMenu {
    width: 95%;
-   height: 250px;
+   min-height: 200px;
    font-size: 20px;
    padding: 20px;
    overflow: scroll;
@@ -68,6 +76,8 @@ label {
 #theDeets {
    opacity: 0.0;
    font-size: 14px;
+   width: 100%;
+   margin-top: 20px;
 }
 
 #addToOrder {
