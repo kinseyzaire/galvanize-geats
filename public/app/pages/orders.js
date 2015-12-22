@@ -23,7 +23,6 @@ var addItemsToMenu = function() {
    for (var i = 0; i < thePull.length; i++) {
       var whatIsIt = thePull[i]['name'];
       whatIsIt = whatIsIt.charAt(whatIsIt.length-1);
-      console.log(whatIsIt);
       if (whatIsIt.charAt(whatIsIt.length-1) === "r") {
          $("#bburgers").after("<option id='menuItem"+[i]+"' value='"+[i]+"'>"+thePull[i]['name']+" "+thePull[i]['price']+"</option>")
       } else {
@@ -63,7 +62,6 @@ $("#deliverIt").click(function(){
       "customerInfo":[userName,userPhone,userAddy],
       "orderItems":thePush
    };
-   console.log(theOrder);
 
    var placeOrder = $.ajax( {
          url:"https://galvanize-eats-api.herokuapp.com/orders",
