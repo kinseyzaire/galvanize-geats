@@ -6,34 +6,58 @@
       <link href="orders.css" rel="stylesheet" type="text/css">
    </head>
    <body>
-      <header id="topHeader">
+      <header class="topHeader">
          Galvanize Eats
       </header>
-      <main style="background-color:orange;">
+      <main>
          <div id="theMenu">
             <form id="menuForm">
                <select id="eatThisMenu" name="menu" multiple>
-
+                  <option id="bburgers" value="Burgers" disabled="disabled"><strong>Burgers</strong></option>
+                  <option id="pizzas" value="Pizzas" disabled="disabled"><strong>Pizzas</strong></option>
                </select>
-               <br>
+               <br><br>
                <label for="qty">Quantity </label><input type="number" id="qty" value="1" min="1" max="99">
                <button type="button" id="addToOrder">Add Item</button><br><br>
                <label for="name">Name </label><br><input type="text" name="name"><br>
                <label for="phone">Phone Number </label><br><input type="text" name="phone"><br>
-               <label for="phone">Address </label><br><input type="text" name="address"><br>
+               <label for="phone">Address </label><br><input type="text" name="address"><br><br>
                <button type="button" id="deliverIt">Deliver It!</button>
             </form>
          <div id="yerOrder">
             <table id="putAllTheOrderHere">
 
             </table>
-            <div id="theDeets">
-               <p>
-                  Subtotal $<span id="orderSubtotal"></span><br>
-                  Tax $<span id="orderTax"></span><br>
-                  Grand Total $<span id="orderGrandTotal"></span><br>
-               </p>
-            </div>
+            <table id="theDeets">
+               <tr>
+                  <td>
+                     Subtotal
+                  </td>
+                  <td>
+                     $<span id="orderSubtotal"></span>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     Tax
+                  </td>
+                  <td>
+                     $<span id="orderTax"></span>
+                  </td>
+               </tr>
+               <tr>
+                  <td>
+                     Grand Total
+                  </td>
+                  <td>
+                     $<span id="orderGrandTotal"></span>
+                  </td>
+               </tr>
+                  <!-- Subtotal $<span id="orderSubtotal"></span><br> -->
+                  <!-- Tax $<span id="orderTax"></span><br>
+                  Grand Total $<span id="orderGrandTotal"></span><br> -->
+
+            </table>
          </div>
       </div>
       </main>
